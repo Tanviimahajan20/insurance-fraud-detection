@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Select Fraud Type</title>
+    <style>
+        /* Full page gradient background */
+        body {
+            margin: 0;
+            height: 100vh;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #f093fb, #f5576c);
+        }
+
+        /* Center container box */
+        .container {
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 50px 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            text-align: center;
+            width: 400px;
+        }
+
+        /* Heading */
+        .container h1 {
+            margin-bottom: 30px;
+            color: #333;
+            font-size: 26px;
+        }
+
+        /* Dropdown */
+        select {
+            padding: 12px 20px;
+            font-size: 16px;
+            border-radius: 10px;
+            border: 1px solid #ccc;
+            width: 100%;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        select:hover {
+            border-color: #ff6a00;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>Select Insurance Fraud Type</h1>
+
+    <select onchange="goToPage(this.value)">
+        <option value="">Choose Fraud Type</option>
+        <option value="/automobile">Automobile Fraud</option>
+        <option value="/health">Health Insurance Fraud</option>
+        <option value="/property">Property Fraud</option>
+    </select>
+</div>
+
+<script>
+function goToPage(page){
+    if(page){
+        window.location.href = page;
+    }
+}
+</script>
+
+</body>
+</html>

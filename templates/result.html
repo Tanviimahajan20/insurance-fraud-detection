@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Fraud Detection Result</title>
+
+<style>
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(120deg,#4facfe,#00f2fe);
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.container{
+    background:white;
+    padding:40px;
+    border-radius:12px;
+    width:450px;
+    text-align:center;
+    box-shadow:0 8px 20px rgba(0,0,0,0.2);
+}
+
+h1{
+    color:#333;
+}
+
+.result{
+    margin-top:20px;
+    font-size:22px;
+    font-weight:bold;
+}
+
+.fraud{
+    color:red;
+}
+
+.notfraud{
+    color:green;
+}
+
+button{
+    margin-top:25px;
+    padding:10px 25px;
+    border:none;
+    border-radius:8px;
+    background:#4facfe;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#3a8be0;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Fraud Probability: {{ probability }}%</h2>
+
+{% if prediction == 1 %}
+<p style="color:red;font-size:22px;">⚠ Fraudulent Claim Detected</p>
+{% else %}
+<p style="color:green;font-size:22px;"> Genuine Claim</p>
+{% endif %}
+
+<div class="result">
+
+{% if prediction == 1 %}
+<p class="fraud">⚠ Fraudulent Claim Detected</p>
+{% else %}
+<p class="notfraud"> Claim Looks Legitimate</p>
+{% endif %}
+
+</div>
+
+<form action="/">
+<button>Check Another Claim</button>
+</form>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Property Fraud Detection</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(120deg,#4facfe,#00f2fe);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            width: 450px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 5px;
+        }
+        .header {
+            text-align: center;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 12px;
+        }
+        label {
+            font-size: 14px;
+            margin-bottom: 3px;
+        }
+        input, select {
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+        }
+        input:focus, select:focus {
+            outline: none;
+            border-color: #4facfe;
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            background: #4facfe;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: 0.3s;
+        }
+        button:hover {
+            background: #2f7de1;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+<h2> Property Fraud Detection</h2>
+<p class="header">Enter property claim details</p>
+
+<form action="/predict" method="POST">
+
+<div class="form-group">
+    <label>Age</label>
+    <input type="number" name="age" value="35" required>
+</div>
+
+<div class="form-group">
+    <label>Gender</label>
+    <select name="insured_sex" required>
+        <option>MALE</option>
+        <option>FEMALE</option>
+    </select>
+</div>
+
+<div class="form-group">
+    <label>Occupation</label>
+    <input type="text" name="insured_occupation" value="Owner" required>
+</div>
+
+<div class="form-group">
+    <label>Policy Number</label>
+    <input type="text" name="policy_number" value="POL987654" required>
+</div>
+
+<div class="form-group">
+    <label>Months as Customer</label>
+    <input type="number" name="months_as_customer" value="24" required>
+</div>
+
+<div class="form-group">
+    <label>Policy Type</label>
+    <select name="policy_type" required>
+        <option>Homeowners</option>
+        <option>Rented Property</option>
+    </select>
+</div>
+
+<div class="form-group">
+    <label>Incident Type</label>
+    <select name="incident_type" required>
+        <option>Fire</option>
+        <option>Flood</option>
+        <option>Theft</option>
+        <option>Natural Disaster</option>
+    </select>
+</div>
+
+<div class="form-group">
+    <label>Incident Severity</label>
+    <select name="incident_severity" required>
+        <option>Minor Damage</option>
+        <option>Major Damage</option>
+        <option>Total Damage</option>
+    </select>
+</div>
+
+<div class="form-group">
+    <label>Property Damage</label>
+    <select name="property_damage" required>
+        <option>Yes</option>
+        <option>No</option>
+    </select>
+</div>
+
+<div class="form-group">
+    <label>Property Claim Amount</label>
+    <input type="number" name="property_claim" value="0" required>
+</div>
+
+<div class="form-group">
+    <label>Total Claim Amount</label>
+    <input type="number" name="total_claim_amount" value="0" required>
+</div>
+
+<input type="hidden" name="fraud_type" value="property">
+
+<button type="submit">Predict Fraud</button>
+</form>
+</div>
+</body>
+</html>

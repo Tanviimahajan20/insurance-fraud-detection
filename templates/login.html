@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Insurance Fraud Detection</title>
+    <style>
+        /* Full page gradient background */
+        body {
+            margin: 0;
+            height: 100vh;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+        }
+
+        /* Center box */
+        .login-box {
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 50px 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            text-align: center;
+            width: 350px;
+        }
+
+        /* Heading */
+        .login-box h1 {
+            margin-bottom: 30px;
+            color: #333;
+            font-size: 28px;
+        }
+
+        /* Button */
+        .login-box button {
+            background: linear-gradient(90deg, #ff6a00, #ee0979);
+            border: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .login-box button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="login-box">
+        <h1>Welcome to Insurance Fraud Detection</h1>
+        <form action="{{ url_for('choose_fraud') }}">
+            <button type="submit">Let's Go Check!</button>
+        </form>
+    </div>
+
+</body>
+</html>

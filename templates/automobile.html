@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Automobile Fraud Detection</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(120deg,#4facfe,#00f2fe);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            width: 450px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 5px;
+        }
+        .header {
+            text-align: center;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 12px;
+        }
+        label {
+            font-size: 14px;
+            margin-bottom: 3px;
+        }
+        input, select {
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+        }
+        input:focus, select:focus {
+            outline: none;
+            border-color: #4facfe;
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            background: #4facfe;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: 0.3s;
+        }
+        button:hover {
+            background: #2f7de1;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+<h2>🚗 Automobile Fraud Detection</h2>
+<p class="header">Enter accident and vehicle details</p>
+
+<form action="/predict" method="POST">
+
+<div class="form-group">
+    <label>Age</label>
+    <input type="number" name="age" value="30" required>
+</div>
+
+<div class="form-group">
+    <label>Gender</label>
+    <select name="insured_sex" required>
+        <option>MALE</option>
+        <option>FEMALE</option>
+    </select>
+</div>
+
+<div class="form-group">
+    <label>Occupation</label>
+    <input type="text" name="insured_occupation" value="Driver" required>
+</div>
+
+<div class="form-group">
+    <label>Months as Customer</label>
+    <input type="number" name="months_as_customer" value="12" required>
+</div>
+
+<div class="form-group">
+    <label>Policy Number</label>
+    <input type="text" name="policy_number" value="POL123456" required>
+</div>
+
+<div class="form-group">
+    <label>Policy Type</label>
+    <select name="policy_type" required>
+        <option>Corporate Auto</option>
+        <option>Personal Auto</option>
+    </select>
+</div>
+
+<div class="form-group">
+    <label>Incident Type</label>
+    <select name="incident_type" required>
+        <option>Single Vehicle Collision</option>
+        <option>Multi-vehicle Collision</option>
+        <option>Parked Car</option>
+        <option>Vehicle Theft</option>
+    </select>
+</div>
+
+<div class="form-group">
+    <label>Collision Type</label>
+    <select name="collision_type" required>
+        <option>Front Collision</option>
+        <option>Rear Collision</option>
+        <option>Side Collision</option>
+    </select>
+</div>
+
+<div class="form-group">
+    <label>Incident Severity</label>
+    <select name="incident_severity" required>
+        <option>Minor Damage</option>
+        <option>Major Damage</option>
+        <option>Total Loss</option>
+    </select>
+</div>
+
+<div class="form-group">
+    <label>Witnesses</label>
+    <input type="number" name="witnesses" value="0" required>
+</div>
+
+<div class="form-group">
+    <label>Vehicles Involved</label>
+    <input type="number" name="number_of_vehicles_involved" value="1" required>
+</div>
+
+<div class="form-group">
+    <label>Police Report Available</label>
+    <select name="police_report_available" required>
+        <option>YES</option>
+        <option>NO</option>
+    </select>
+</div>
+
+<div class="form-group">
+    <label>Total Claim Amount</label>
+    <input type="number" name="total_claim_amount" value="0" required>
+</div>
+
+<div class="form-group">
+    <label>Vehicle Claim Amount</label>
+    <input type="number" name="vehicle_claim" value="0" required>
+</div>
+
+<div class="form-group">
+    <label>Vehicle Make</label>
+    <input type="text" name="auto_make" value="Toyota" required>
+</div>
+
+<div class="form-group">
+    <label>Vehicle Model</label>
+    <input type="text" name="auto_model" value="Corolla" required>
+</div>
+
+<div class="form-group">
+    <label>Vehicle Year</label>
+    <input type="number" name="auto_year" value="2020" required>
+</div>
+
+<input type="hidden" name="fraud_type" value="automobile">
+
+<button type="submit">Predict Fraud</button>
+</form>
+</div>
+</body>
+</html>
